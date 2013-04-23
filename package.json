@@ -1,12 +1,12 @@
 {
-  "name": "cacheQueue",
+  "name": "cache-queue",
   "description": "queued caching",
   "keywords": ["cache", "queue"],
   "homepage": "https://github.com/leonchen/cacheQueue",
   "author": "Leon Chen",
   "version": "0.0.1",
   "licenses": [ { "type": "MIT" }],
-  "main" : "cacheQueue",
+  "main" : "cache-queue",
   "bin": {},
   "repository": {
     "type": "git",
