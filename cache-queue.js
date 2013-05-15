@@ -1,11 +1,11 @@
 var LENGTH = 200;
-var DURATION = 300000;
+var TTL = 300000;
 var CACHE = {};
 
 var Queue = function (name, options) {
   options = options || {};
   this.name = name;
-  this.duration = parseInt(options.duration || DURATION);
+  this.ttl = parseInt(options.ttl || TTL);
   this.queue = {};
 
   var length = parseInt(options.length || LENGTH);
@@ -32,7 +32,7 @@ Queue.prototype.set = function (key, data) {
   if (removeKey) delete this.queue[removeKey];
   this.queue[key] = {
     data: data,
-    expiredAt: (Date.now() + this.duration)
+    expiredAt: (Date.now() + this.ttl)
   };
   this.keys[this.paddingIndex] = key;
   this.paddingIndex = this.paddingIndex >= this.maxIndex ? 0 : this.paddingIndex+1;
